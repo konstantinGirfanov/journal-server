@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
     res.send("Hello!");
 });
 
-app.get('/authorization', (req, res) => {
+app.post('/authorization', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
@@ -47,7 +47,7 @@ app.get('/authorization', (req, res) => {
     //executeQuery(`select * from users where nickname='leha' and password='test'`, res);
 });
 
-app.get('/attendance-done', (req, res) => {
+app.post('/attendance-done', (req, res) => {
     const attendanceId = req.body.attendanceId;
     const students = req.body.students;
 
@@ -61,7 +61,7 @@ app.get('/attendance-done', (req, res) => {
     executeQuery(query, res);
 });
 
-app.get('/time-table', (req, res) => {
+app.post('/time-table', (req, res) => {
     const groupId = req.body.groupId;
 
     // типа список пар
@@ -78,7 +78,7 @@ app.get('/time-table', (req, res) => {
     executeQuery(query, res);
 });
 
-app.get('/teachers', (req, res) => {
+app.post('/teachers', (req, res) => {
     const groupId = req.body.groupId;
 
     // типа список преподов
